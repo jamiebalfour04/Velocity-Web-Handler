@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="VelocityWebHandler">
+    <output-path>$USER_HOME$/Dropbox/Programs/JARs</output-path>
+    <root id="archive" name="VelocityWebHandler.jar">
+      <element id="module-output" name="Velocity-Web-Handler" />
+    </root>
+  </artifact>
+</component>
