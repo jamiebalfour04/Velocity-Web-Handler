@@ -1,4 +1,6 @@
-package jamiebalfour.velocity;
+package jamiebalfour.vws;
+
+import java.util.Map;
 
 /**
  * VWS handles a request by examining the headers sent across. If the header requests
@@ -7,7 +9,8 @@ package jamiebalfour.velocity;
  */
 public interface VelocityRequestHandler {
 
-  VelocityHandlerData handle(VelocityServerResponse r, String documentRoot, Object server);
+  VelocityHandlerData handle(VelocityServerRequest r, Map<String, String> mainProperties, String documentRoot, Object server);
 
-  String getExtension();
+  String[] getExtensions();
+
 }

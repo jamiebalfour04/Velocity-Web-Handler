@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="vws">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Velocity-Web-Server/build/vws.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
