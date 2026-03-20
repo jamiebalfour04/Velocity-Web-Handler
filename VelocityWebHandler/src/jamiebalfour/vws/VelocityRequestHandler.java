@@ -1,5 +1,7 @@
 package jamiebalfour.vws;
 
+import jamiebalfour.velocity.core.VelocityWebServer;
+
 import java.util.Map;
 
 /**
@@ -9,8 +11,10 @@ import java.util.Map;
  */
 public interface VelocityRequestHandler {
 
-  VelocityHandlerData handle(VelocityServerRequest r, Map<String, String> mainProperties, String documentRoot, Object server);
+  VelocityHandlerData handle(VelocityServerRequest r, Map<String, String> mainProperties, String documentRoot, VelocityWebServer owner);
 
   String[] getExtensions();
+
+  boolean load(Map<String, String> mainProperties);
 
 }

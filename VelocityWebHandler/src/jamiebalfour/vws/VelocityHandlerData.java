@@ -13,7 +13,7 @@ public class VelocityHandlerData {
 
   private List<Header> headers = new ArrayList<>();
   private Map<String, String> cookies;
-  private Map<String, Object> session;
+  private String errorMessage = null;
 
   private String content;
 
@@ -49,16 +49,6 @@ public class VelocityHandlerData {
     return this.cookies;
   }
 
-  /* ---------------- Session ---------------- */
-
-  public void setSession(Map<String, Object> session) {
-    this.session = session;
-  }
-
-  public Map<String, Object> getSession() {
-    return this.session;
-  }
-
   /* ---------------- Status ---------------- */
 
   public void setStatus(int s) {
@@ -87,5 +77,13 @@ public class VelocityHandlerData {
     public String getValue() {
       return value;
     }
+  }
+
+  public void setErrorMessage(String errorMessage){
+    this.errorMessage = errorMessage;
+  }
+
+  public String getErrorMessage(){
+    return this.errorMessage;
   }
 }
