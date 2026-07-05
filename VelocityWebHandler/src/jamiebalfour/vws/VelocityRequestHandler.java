@@ -2,6 +2,8 @@ package jamiebalfour.vws;
 
 import jamiebalfour.velocity.core.VelocityWebServer;
 
+import java.io.OutputStream;
+
 import java.util.Map;
 
 /**
@@ -16,5 +18,15 @@ public interface VelocityRequestHandler {
   String[] getExtensions();
 
   boolean load(Map<String, String> mainProperties);
+
+  default boolean supportsStreaming() {
+    return false;
+  }
+
+  default boolean handleStreaming(VelocityServerRequest r, Map<String, String> mainProperties, String documentRoot, VelocityWebServer owner, OutputStream out, boolean keepAlive) {
+    return false;
+  }
+
+
 
 }
