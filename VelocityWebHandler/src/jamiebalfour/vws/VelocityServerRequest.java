@@ -6,6 +6,7 @@ import java.util.Map;
 public class VelocityServerRequest {
   final String file;
   final String requestType;
+  final String requestPath;
   final String query_string;
   final String post_string;
   final String remote_address;
@@ -13,8 +14,13 @@ public class VelocityServerRequest {
   final Map<String, String> cookies;
 
   public VelocityServerRequest(String file, String requestType, String query_string, String post_string, String remote_address, Map<String, String> headers, Map<String, String> cookies) {
+    this(file, requestType, "", query_string, post_string, remote_address, headers, cookies);
+  }
+
+  public VelocityServerRequest(String file, String requestType, String requestPath, String query_string, String post_string, String remote_address, Map<String, String> headers, Map<String, String> cookies) {
     this.file = file;
     this.requestType = requestType;
+    this.requestPath = requestPath;
     this.query_string = query_string;
     this.post_string = post_string;
     this.remote_address = remote_address;
@@ -28,6 +34,15 @@ public class VelocityServerRequest {
 
   public String getRequestType() {
     return requestType;
+  }
+
+  /**
+   * Returns the original URL path requested by the client. This can differ
+   * from {@link #getFile()} when the server forwards a clean route to a root
+   * router page.
+   */
+  public String getRequestPath() {
+    return requestPath;
   }
 
   public String getQueryString() {
@@ -50,4 +65,3 @@ public class VelocityServerRequest {
     return cookies;
   }
 }
-
